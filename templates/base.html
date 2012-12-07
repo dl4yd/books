@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div align="center">
+	<h3>My Example Site</h3>
+    	<div align="center">
+        <p>Search the list of books below:</p>
+    	{% if error %}
+        <p style="color: red;">Please submit a search term.</p>
+    	{% endif %}
+    	<form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    	</form>
+		</div>
+	{% block content %}{% endblock %}
+	{% block footer %}
+	<hr>
+	<p>Thank you for your time WillowTree Apps! - David Leary</p>
+	{% endblock %}
+</body>
+</html>
